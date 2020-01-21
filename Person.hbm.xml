@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Person" table="PERSON">   
+     	
+		<id 
+			name="id"
+			type="long"
+		 	column="PERSON_ID">
+				<generator class="sequence">
+					<param name="sequence">person_id_sequence</param>
+				</generator>
+		</id> 
+        
+        <property
+        	name="gender"
+        	type="string"
+        	column="PERSON_GENDER"/>
+        	
+        <property 
+        	name="race" 
+        	type="string"
+        	column="PERSON_RACE"/>
+        	
+        <property 
+        	name="dob" 
+        	type="calendar_date"
+        	column="PERSON_BIRTH_DATE"/>
+        
+        <component name="name" class="Name">
+        
+        	<property 
+        	name="first" 
+        	type="string"
+        	column="PERSON_NAME_FIRST"/>   
+        	     	
+        	<property
+        	name="middle"
+        	type="string"
+        	column="PERSON_NAME_MIDDLE"/>
+        	
+        	<property 
+        	name="fathers" 
+        	type="string"
+        	column="PERSON_NAME_FATHERS"/>   
+        	     	
+        	<property
+        	name="mothersMaiden"
+        	type="string"
+        	column="PERSON_NAME_MOTHERS_MAIDEN"/>
+        	
+        	<property 
+        	name="grandfathers" 
+        	type="string"
+        	column="PERSON_NAME_GRANDFATHERS"/>   
+        	     	
+        	<property
+        	name="familys"
+        	type="string"
+        	column="PERSON_NAME_FAMILYS"/>
+        	
+        	<property
+        	name="alias"
+        	type="string"
+        	column="PERSON_NAME_ALIAS"/>
+        	
+        </component>
+        
+    </class>
+</hibernate-mapping>

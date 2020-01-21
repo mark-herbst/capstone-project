@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="LinkPersonEvent" table="PERSON_EVENT">   
+     	
+		<id 
+			name="id"
+			type="long"
+		 	column="PERSON_EVENT_ID">
+				<generator class="sequence">
+					<param name="sequence">person_event_id_sequence</param>
+				</generator>
+		</id> 
+        
+        <many-to-one name="person"
+        			 class="Person"
+        			 column="PERSON_ID"
+        			 cascade="save-update"
+        			 not-null="true"/>
+        			 
+        <many-to-one name="event"
+        			 class="Event"
+        			 column="EVENT_ID"
+        			 cascade="save-update"
+        			 not-null="true"/>        			 
+        
+    </class>
+</hibernate-mapping>

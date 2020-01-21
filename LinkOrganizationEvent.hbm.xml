@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="LinkOrganizationEvent" table="ORGANIZATION_EVENT">   
+     	
+		<id 
+			name="id"
+			type="long"
+		 	column="ORGANIZATION_EVENT_ID">
+				<generator class="sequence">
+					<param name="sequence">org_event_id_sequence</param>
+				</generator>
+		</id> 
+        
+        <many-to-one name="organization"
+        			 class="Organization"
+        			 column="ORGANIZATION_ID"
+        			 cascade="save-update"
+        			 not-null="true"/>
+        			 
+        <many-to-one name="event"
+        			 class="Event"
+        			 column="EVENT_ID"
+        			 cascade="save-update"
+        			 not-null="true"/>        			 
+        
+    </class>
+</hibernate-mapping>

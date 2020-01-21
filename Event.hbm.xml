@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Event" table="EVENT">  
+   
+		<id 
+			name="id"
+		 	type="long"
+		 	column="EVENT_ID">
+				<generator class="sequence">
+					<param name="sequence">event_id_sequence</param>
+				</generator>
+		</id>       
+        	
+        <property
+        	name="eventDate"
+        	type="calendar_date"
+        	column="EVENT_DATE"/> 
+        	
+        <property
+        	name="title"
+        	type="string"
+        	column="EVENT_TITLE"/>
+        		
+        <property
+        	name="description"
+        	type="string"
+        	column="EVENT_DESCRIPTION"/> 
+        	
+    </class>
+</hibernate-mapping>

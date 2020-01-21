@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="User" table="USERS"> 
+       	
+		<id 
+			name="id"
+		 	type="long"
+		 	column="USER_ID">
+				<generator class="sequence">
+					<param name="sequence">user_id_sequence</param>
+				</generator>
+		</id>        	
+        
+        <property
+        	name="userType"
+        	type="string"
+        	column="USER_TYPE"/>
+        	
+        <property 
+        	name="username" 
+        	type="string"
+        	column="USER_USERNAME"/>  
+        	      	
+        <property
+        	name="password"
+        	type="string"
+        	column="USER_PASSWORD"/>
+        	
+    </class>
+</hibernate-mapping>

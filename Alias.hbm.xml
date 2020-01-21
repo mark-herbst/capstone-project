@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Alias" table="ALIAS">   
+     	
+		<id 
+			name="id"
+			type="long"
+		 	column="ALIAS_ID">
+				<generator class="sequence">
+					<param name="sequence">alias_id_sequence</param>
+				</generator>
+		</id> 
+        
+        <property
+        	name="alias"
+        	type="string"
+        	column="ALIAS_NAME"/>
+        	
+     	<property 
+        	name="first" 
+        	type="string"
+        	column="ALIAS_FIRST"/>   
+        	     	
+        <property
+        	name="middle"
+        	type="string"
+        	column="ALIAS_MIDDLE"/>
+        	
+        <property 
+        	name="fathers" 
+        	type="string"
+        	column="ALIAS_FATHERS"/>   
+        	     	
+        <property
+        	name="mothersMaiden"
+        	type="string"
+        	column="ALIAS_MOTHERS_MAIDEN"/>
+        	
+        <property 
+        	name="grandfathers" 
+        	type="string"
+        	column="ALIAS_GRANDFATHERS"/>   
+        	     	
+        <property
+        	name="familys"
+        	type="string"
+        	column="ALIAS_FAMILYS"/>        
+            	
+    </class>
+</hibernate-mapping>

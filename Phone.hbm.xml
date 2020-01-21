@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Phone" table="PHONE">  
+      	
+		<id 
+			name="id"
+		 	type="long"
+		 	column="PHONE_ID">
+				<generator class="sequence">
+					<param name="sequence">phone_id_sequence</param>
+				</generator>
+		</id>      
+        	
+        <property
+        	name="areaCode"
+        	type="string"
+        	column="PHONE_AREA_CODE"/>  
+        	
+        <property
+        	name="exchange"
+        	type="string"
+        	column="PHONE_EXCHANGE"/> 
+        	
+        <property
+        	name="subscriber"
+        	type="string"
+        	column="PHONE_SUBSCRIBER"/> 
+        	
+        <property
+        	name="country"
+        	type="string"
+        	column="PHONE_COUNTRY"/> 
+        	
+    </class>
+</hibernate-mapping>
